@@ -24,9 +24,7 @@ source "$(which virtualenvwrapper.sh)"
 export JAVA_HOME=/Library/Java/Home
 #export ANT_OPTS='-Xmx1G'
 
-export PATH=/opt/local/lib/postgresql83/bin:/opt/local/bin:/opt/local/sbin:/bin:/usr/local/bin:/usr/local/git/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$JRUBY_HOME/bin:$PATH:/usr/X11R6/bin:~/bin:~/.cabal/bin
-export MANPATH=/opt/local/share/man:$MANPATH
-export INFOPATH=$INFOPATH:/opt/local/share/info
+export PATH=/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$JRUBY_HOME/bin:$PATH:/usr/X11R6/bin:~/bin:~/.cabal/bin
 
 export EDITOR=vim
 export PAGER=less
