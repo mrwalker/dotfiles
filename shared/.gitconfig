@@ -33,3 +33,5 @@
   lp=log -p
   rpull=pull --rebase --stat
   glog=log --pretty=format:'%h %ar %Cred%an%Creset %m %s%d' --graph
+[push]
+	default = simple
