@@ -1,3 +1,4 @@
+alias gist='gist -p -c'
 alias top='top -o cpu'
 alias grep='grep --color'
 alias cls='clear;ls'
@@ -13,12 +14,13 @@ alias jrake='jruby -S rake'
 
 export PS1='[\u@\h \W `git branch --no-color 2> /dev/null | grep \* | sed "s/^*\ /\(/" | sed "s/$/)/"`]\$ '
 
-export PYTHONPATH=Users/mwalker/pulsemeridian/svn-repo/code:/opt/local/lib/python2.5/site-packages/:$PYTHONPATH
 # Python
+export PYTHONPATH=$PYTHONPATH:/Users/mwalker/pulsemeridian/svn-repo/code
 export WORKON_HOME="$HOME/.virtualenv"
 mkdir -p "$WORKON_HOME"
 source "$(which virtualenvwrapper.sh)"
 
+# Java
 export JAVA_HOME=/Library/Java/Home
 #export ANT_OPTS='-Xmx1G'
 
