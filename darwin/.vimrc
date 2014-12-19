@@ -116,6 +116,10 @@ autocmd FileType make set noexpandtab shiftwidth=8
 
 autocmd FileType ruby set expandtab shiftwidth=2
 
+autocmd FileType python set expandtab shiftwidth=4
+
+autocmd FileType hql set expandtab shiftwidth=2
+
 " * Search & Replace
 
 " make searches case-insensitive, unless they contain upper-case letters:
@@ -302,11 +306,14 @@ nnoremap <C-p> :Project<CR>
 
 augroup filetype
   autocmd BufNewFile,BufRead *.rhtml set filetype=html
+  autocmd BufNewFile,BufRead *.hql set filetype=hql
   autocmd BufNewFile,BufRead *.erb set filetype=ruby
   autocmd BufNewFile,BufRead *.crbl set filetype=ruby
   autocmd BufNewFile,BufRead *.rake set filetype=ruby
   autocmd BufNewFile,BufRead *.lzx set filetype=lzx
   autocmd BufNewFile,BufRead *.lzs set filetype=javascript
+  autocmd BufNewFile,BufRead *.proto set filetype=proto
+  autocmd BufNewFile,BufRead *.pig set filetype=pig
 augroup END
 
 " Matt added for rubycomplete plugin

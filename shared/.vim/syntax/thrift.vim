@@ -1,0 +1,1 @@
+/Users/mwalker/git/sprsquish/thrift.vim/syntax/thrift.vim
