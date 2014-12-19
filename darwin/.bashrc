@@ -24,11 +24,14 @@ source "$(which virtualenvwrapper.sh)"
 export JAVA_HOME=/Library/Java/Home
 #export ANT_OPTS='-Xmx1G'
 
+# JavaScript
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
+
 export PATH=/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$JRUBY_HOME/bin:$PATH:/usr/X11R6/bin:~/bin:~/.cabal/bin
 
 export EDITOR=vim
 export PAGER=less
 export LESS="-iMSx4 -FXR"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
