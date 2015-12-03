@@ -84,8 +84,8 @@ augroup filetype
   autocmd BufNewFile,BufRead *.txt set filetype=human
 augroup END
 
-" in human-language files, automatically format everything at 80 chars:
-autocmd FileType mail,human set formatoptions+=t textwidth=80
+" in human-language files, automatically format everything at 79 chars:
+autocmd FileType mail,human set formatoptions+=t textwidth=79
 
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,slang set cindent

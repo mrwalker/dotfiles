@@ -18,3 +18,12 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u
 termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 
 #term screen-256
+
+screen -t cli
+screen -t vim
+screen -t web
+screen -t sql
+screen -t tests
+screen -t server
+screen -t webpack
+screen -t redshift
