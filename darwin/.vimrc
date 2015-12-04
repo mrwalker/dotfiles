@@ -1,4 +1,4 @@
-set backupskip=/tmp/*,/private/tmp/*" 
+set backupskip=/tmp/*,/private/tmp/*"
 
 " first clear any existing autocommands:
 autocmd!
@@ -289,13 +289,13 @@ set backspace=eol,start,indent
 " [<Ctrl>+V <Tab> still inserts an actual tab character.]
 
 " Greg's stuff
-command GrepWord :execute 'grep -r --exclude-dir=data --exclude-dir=log --exclude-dir=tmp --exclude=*.log --exclude=*.*-base --exclude=*.tmp '.expand('<cword>').' *' | :copen 
+command GrepWord :execute 'grep -r --exclude-dir=data --exclude-dir=log --exclude-dir=tmp --exclude=*.log --exclude=*.*-base --exclude=*.tmp '.expand('<cword>').' *' | :copen
 set efm+=%m\ \ \ \ \ \ %f"
 noremap \gG :GrepWord<CR>
 command SVNDirStatus :cgetexpr system("svn status --ignore-externals \| grep -v '^ '") | :copen | :cc
 noremap \sS :SVNDirStatus<CR>
 "nnoremap <c-g> :GrepWord<CR>
-"nnoremap <c-j> 	:cnext<CR> :norm! zz<cr> 
+"nnoremap <c-j> 	:cnext<CR> :norm! zz<cr>
 "nnoremap <c-k> 	:cprev<CR> :norm! zz<cr>
 "nnoremap <c-n> :tabnew<CR>
 "nnoremap <c-l> :tabnext<CR>
@@ -338,4 +338,10 @@ nnoremap <Leader>f :FuzzyFinderFile<CR>
 " Pig syntax highlighting
 augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
-augroup END 
+augroup END
+
+" pymode settings
+let g:pymode_folding = 0
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_complete_on_dot = 0
