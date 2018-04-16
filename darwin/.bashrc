@@ -21,7 +21,7 @@ mkdir -p "$WORKON_HOME"
 source "$(which virtualenvwrapper.sh)"
 
 # Java
-export JAVA_HOME=/Library/Java/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/
 #export ANT_OPTS='-Xmx1G'
 
 # JavaScript
