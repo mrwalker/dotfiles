@@ -342,7 +342,10 @@ augroup filetypedetect
 augroup END
 
 " pymode settings
+let g:pymode = 1
 let g:pymode_folding = 0
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_options_max_line_length = 79
+let g:pymode_lint_ignore = "E41,E902"
