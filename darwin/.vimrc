@@ -312,6 +312,7 @@ augroup filetype
   autocmd BufNewFile,BufRead *.rake set filetype=ruby
   autocmd BufNewFile,BufRead *.lzx set filetype=lzx
   autocmd BufNewFile,BufRead *.lzs set filetype=javascript
+  autocmd BufNewFile,BufRead *.json set filetype=javascript
   autocmd BufNewFile,BufRead *.proto set filetype=proto
   autocmd BufNewFile,BufRead *.pig set filetype=pig
 augroup END
