@@ -11,10 +11,12 @@ alias rm='rm -i'
 alias du='du -h'
 alias df='df -H'
 alias jrake='jruby -S rake'
+alias hadoop_ssh='ssh -L 9100:localhost:9100 -L 9101:localhost:9101 -L 9200:localhost:80'
 
 export PS1='[\u@\h \W `git branch --no-color 2> /dev/null | grep \* | sed "s/^*\ /\(/" | sed "s/$/)/"`]\$ '
 
 # Python
+export DJANGO_SETTINGS_MODULE=settings.dev
 export PYTHONPATH=$PYTHONPATH:/Users/mwalker/pulsemeridian/svn-repo/code
 export WORKON_HOME="$HOME/.virtualenv"
 mkdir -p "$WORKON_HOME"
@@ -27,7 +29,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 # JavaScript
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
-export PATH=/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$JRUBY_HOME/bin:$PATH:/usr/X11R6/bin:~/bin:~/.cabal/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$JRUBY_HOME/bin:$PATH:/usr/X11R6/bin:~/bin:~/.cabal/bin
 
 export EDITOR=vim
 export PAGER=less
@@ -35,3 +37,16 @@ export LESS="-iMSx4 -FXR"
 
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+##
+# Load any extra Bash profile scripts
+##
+if [[ -d ~/.profile.d ]]; then
+    for f in ~/.profile.d/*.bash; do
+        . "$f"
+    done
+fi
+
+# Use brew-provided openssl
+export PATH="$(brew --prefix openssl)/bin:$PATH"
+export OPENSSL_ROOT="$(brew --prefix openssl)"
