@@ -65,9 +65,9 @@ set expandtab
 set autoindent
 
 " normally don't automatically format `text' as it is typed, IE only do this
-" with comments, at 79 characters:
+" with comments, at 88 characters:
 set formatoptions-=t
-set textwidth=79
+set textwidth=88
 
 " * Text Formatting -- Specific File Formats
 
@@ -84,8 +84,8 @@ augroup filetype
   autocmd BufNewFile,BufRead *.txt set filetype=human
 augroup END
 
-" in human-language files, automatically format everything at 79 chars:
-autocmd FileType mail,human set formatoptions+=t textwidth=79
+" in human-language files, automatically format everything at 88 chars:
+autocmd FileType mail,human set formatoptions+=t textwidth=88
 
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,slang set cindent
@@ -116,7 +116,8 @@ autocmd FileType make set noexpandtab shiftwidth=8
 
 autocmd FileType ruby set expandtab shiftwidth=2
 
-autocmd FileType python set expandtab shiftwidth=4
+" Let python-mode handle this
+" autocmd FileType python set expandtab shiftwidth=4
 
 autocmd FileType hql set expandtab shiftwidth=2
 
@@ -288,22 +289,6 @@ set backspace=eol,start,indent
 "inoremap <S-Tab> <C-D>
 " [<Ctrl>+V <Tab> still inserts an actual tab character.]
 
-" Greg's stuff
-command GrepWord :execute 'grep -r --exclude-dir=data --exclude-dir=log --exclude-dir=tmp --exclude=*.log --exclude=*.*-base --exclude=*.tmp '.expand('<cword>').' *' | :copen
-set efm+=%m\ \ \ \ \ \ %f"
-noremap \gG :GrepWord<CR>
-command SVNDirStatus :cgetexpr system("svn status --ignore-externals \| grep -v '^ '") | :copen | :cc
-noremap \sS :SVNDirStatus<CR>
-"nnoremap <c-g> :GrepWord<CR>
-"nnoremap <c-j> 	:cnext<CR> :norm! zz<cr>
-"nnoremap <c-k> 	:cprev<CR> :norm! zz<cr>
-"nnoremap <c-n> :tabnew<CR>
-"nnoremap <c-l> :tabnext<CR>
-"nnoremap <c-h> :tabprev<CR>
-"nnoremap <c-x> :q<CR>
-nnoremap <C-o> :FindFile<CR>
-nnoremap <C-p> :Project<CR>
-
 augroup filetype
   autocmd BufNewFile,BufRead *.rhtml set filetype=html
   autocmd BufNewFile,BufRead *.hql set filetype=hql
@@ -317,35 +302,24 @@ augroup filetype
   autocmd BufNewFile,BufRead *.pig set filetype=pig
 augroup END
 
-" Matt added for rubycomplete plugin
-" http://www.cuberick.com/2008/10/ruby-autocomplete-in-vim.html
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-" Improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
+" vim-plug
+call plug#begin()
+Plug 'tpope/vim-sensible'
 
-" Matt added to fix grep plugin
-" http://www.cuberick.com/2008/11/navigating-larger-ruby-codebases-with.html
-:let Grep_Find_Use_Xargs = 0
-:let Grep_Default_Filelist = '*.rb'
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+call plug#end()
 
 " Matt's stuff
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <Leader>b :FuzzyFinderBuffer<CR>
-nnoremap <Leader>f :FuzzyFinderFile<CR>
-
-" Pig syntax highlighting
-augroup filetypedetect
-  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
-augroup END
 
 " pymode settings
 let g:pymode = 1
+" let g:pymode_debug = 1
 let g:pymode_folding = 0
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_options_max_line_length = 88
-let g:pymode_lint_ignore = "E722,W503,W605"
+let g:pymode_lint_ignore = ["E741", "E722", "W503", "W605",]
