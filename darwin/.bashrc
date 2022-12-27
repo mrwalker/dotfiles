@@ -28,6 +28,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 #export ANT_OPTS='-Xmx1G'
 
 # JavaScript
+export PATH="/usr/local/opt/node@16/bin:$PATH"
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$JRUBY_HOME/bin:$PATH:/usr/X11R6/bin:~/bin:~/.cabal/bin
