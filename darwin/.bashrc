@@ -15,6 +15,13 @@ alias hadoop_ssh='ssh -L 9100:localhost:9100 -L 9101:localhost:9101 -L 9200:loca
 
 export PS1='[\u@\h \W `git branch --no-color 2> /dev/null | grep \* | sed "s/^*\ /\(/" | sed "s/$/)/"`]\$ '
 
+# Override annoying zsh
+export SHELL="/bin/bash"
+
+# Brew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
 # Python
 export DJANGO_SETTINGS_MODULE=settings.dev
 export PYTHONPATH=$PYTHONPATH:/Users/mwalker/pulsemeridian/svn-repo/code
@@ -54,3 +61,7 @@ fi
 # Use brew-provided openssl
 export PATH="$(brew --prefix openssl)/bin:$PATH"
 export OPENSSL_ROOT="$(brew --prefix openssl)"
+
+# Simon autocompletion
+complete -F _simon-db simon-db
+complete -F _simon-docker simon-docker
