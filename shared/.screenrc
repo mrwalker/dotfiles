@@ -24,7 +24,6 @@ screen -t vim
 screen -t web
 screen -t sql
 screen -t tests
-screen -t supervisor
+screen -t server
+screen -t webpack
 screen -t redshift
-screen -t ci
-screen -t mrjob
