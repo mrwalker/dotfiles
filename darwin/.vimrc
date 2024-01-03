@@ -311,6 +311,7 @@ endif
 
 call plug#begin()
 Plug 'tpope/vim-sensible'
+Plug 'github/copilot.vim'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
