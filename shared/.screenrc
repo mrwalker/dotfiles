@@ -17,7 +17,7 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u
 #termcapinfo xterm ti@:te@
 termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 
-#term screen-256
+export TERM="xterm-256color"
 
 screen -t cli
 screen -t vim

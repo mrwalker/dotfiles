@@ -35,3 +35,6 @@
   glog=log --pretty=format:'%h %ar %Cred%an%Creset %m %s%d' --graph
 [push]
 	default = simple
+[user]
+	name = mwalker
+	email = mwalker@simondata.com

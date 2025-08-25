@@ -22,13 +22,6 @@ export SHELL="/bin/bash"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
-# Python
-export DJANGO_SETTINGS_MODULE=settings.dev
-export PYTHONPATH=$PYTHONPATH:/Users/mwalker/pulsemeridian/svn-repo/code
-export WORKON_HOME="$HOME/.virtualenv"
-mkdir -p "$WORKON_HOME"
-source "$(which virtualenvwrapper.sh)"
-
 # Java
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/
@@ -61,6 +54,14 @@ fi
 # Use brew-provided openssl
 export PATH="$(brew --prefix openssl)/bin:$PATH"
 export OPENSSL_ROOT="$(brew --prefix openssl)"
+
+# Use brew-provided Python
+export PATH="$(brew --prefix python)/libexec/bin:$PATH"
+# export PYTHONPATH=$PYTHONPATH
+export DJANGO_SETTINGS_MODULE=settings.dev
+export WORKON_HOME="$HOME/.virtualenv"
+mkdir -p "$WORKON_HOME"
+source "$(which virtualenvwrapper.sh)"
 
 # Simon autocompletion
 complete -F _simon-db simon-db
